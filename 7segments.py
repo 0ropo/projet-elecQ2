@@ -5,5 +5,12 @@ def init_leds():
          led = Pin(i)
          led.init(Pin.OUT)
 
+def set_leds(x):
+    for i in range(4): # pin 0 à 3
+         led = Pin(i)
+         led.value(  (x>>i)%2 )
+
+init_leds()
+set_leds(8)
 while True:
-  pass
+  sleep(1)
